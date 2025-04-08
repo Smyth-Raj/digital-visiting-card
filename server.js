@@ -36,14 +36,19 @@ app.post("/submit", upload.single("photo"), async (req, res) => {
   const id = uuidv4();
   const { name, phone, email, company } = req.body;
   const photo = req.file ? req.file.filename : null;
-  const dataUrl = `http://192.168.221.197:3000/card/${id}`;
+
+  // ✅ Dynamic URL (local or Render/Heroku etc.)
+  const protocol = req.protocol;
+  const host = req.get("host");
+  const dataUrl = `${protocol}://${host}/card/${id}`;
+
   const qrFile = `${id}.png`;
   const qrPath = path.join(QR_DIR, qrFile);
 
   await qr.toFile(qrPath, dataUrl);
 
   users[id] = { name, phone, email, company, photo, views: 0 };
-  res.render("success", { qrFile, id });
+  res.render("success", { qrFile, id, host });
 });
 
 app.get("/card/:id", (req, res) => {
@@ -65,4 +70,4 @@ app.get("/vcf/:id", (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`🚀 Server running on http://192.168.221.197:${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
