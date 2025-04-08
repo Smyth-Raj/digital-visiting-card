@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Success</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="success-page">
+  <div class="success-container glass">
+    <h2>🎉 Your Digital Visiting Card is Ready!</h2>
+    <img src="/qr/<%= qrFile.split('/').pop() %>" alt="QR Code" class="qr-img" />
+    <a href="/card/<%= id %>" class="btn">📄 View My Card</a>
+  </div>
+</body>
+</html>

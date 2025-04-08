@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Digital Visiting Card</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="form-page">
+  <div class="card-container glass">
+    <h1>Create Your Digital Visiting Card 💼</h1>
+    <form action="/submit" method="POST" enctype="multipart/form-data">
+      <input type="text" name="name" placeholder="👤 Full Name" required />
+      <input type="text" name="company" placeholder="🏢 Company" required />
+      <input type="email" name="email" placeholder="📧 Email" required />
+      <input type="tel" name="phone" placeholder="📱 Phone" required />
+      <input type="file" name="photo" accept="image/*" />
+      <button type="submit">🚀 Generate My Card</button>
+    </form>
+  </div>
+</body>
+</html>

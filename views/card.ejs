@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= user.name %>'s Card</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="card-page">
+  <div class="visit-card glass">
+    <% if (user.photo) { %>
+      <img src="/uploads/<%= user.photo %>" class="profile-pic" alt="Profile">
+    <% } %>
+    
+    <h2><%= user.name %></h2>
+    <p>🏢 <%= user.company %></p>
+    <p>📧 <%= user.email %></p>
+    <p>📱 <%= user.phone %></p>
+
+    <a href="/vcf/<%= id %>" class="btn">📥 Save Contact (VCF)</a>
+
+    <!-- 🔗 WhatsApp Share Button -->
+    <a
+      href="https://wa.me/?text=Hey%2C%20check%20out%20my%20digital%20visiting%20card%3A%20http%3A%2F%2F192.168.221.197%3A3000%2Fcard%2F<%= id %>"
+      target="_blank"
+      class="btn whatsapp-share"
+      style="margin-top: 12px; background-color: #25D366; color: white; display: inline-block;"
+    >
+      📲 Share on WhatsApp
+    </a>
+  </div>
+</body>
+</html>

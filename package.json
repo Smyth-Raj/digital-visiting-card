@@ -1,0 +1,17 @@
+{
+  "name": "digital-visiting-card",
+  "version": "1.0.0",
+  "description": "Free Digital Visiting Card Generator with QR & WhatsApp share",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "multer": "^1.4.5",
+    "path": "^0.12.7",
+    "qrcode": "^1.5.3",
+    "uuid": "^9.0.0"
+  }
+}

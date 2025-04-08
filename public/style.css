@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1d3557, #457b9d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .glass {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    width: 350px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    color: white;
+    text-align: center;
+  }
+  
+  input, button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+  }
+  
+  input {
+    background: rgba(255,255,255,0.1);
+    color: white;
+  }
+  
+  button, .btn {
+    background-color: #fca311;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .qr-img {
+    width: 200px;
+    margin: 20px 0;
+  }
+  
