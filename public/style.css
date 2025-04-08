@@ -19,29 +19,28 @@ body {
     text-align: center;
   }
   
-  input, button {
+  input, button, textarea {
     width: 100%;
     margin-top: 10px;
     padding: 12px;
     border: none;
     border-radius: 8px;
     font-size: 1em;
-  }
-  ::placeholder {
-    color: #888; /* Light gray – visible but subtle */
-    font-size: 14px;
     font-family: 'Segoe UI', sans-serif;
-    opacity: 1; /* Important to ensure visibility */
   }
   
-  /* For all browsers */
-  input::-webkit-input-placeholder { color: #888; }
-  input:-ms-input-placeholder { color: #888; }
-  input::placeholder { color: #888; }
-  
-  input {
+  input, textarea {
     background: rgba(255,255,255,0.1);
     color: white;
+  }
+  
+  /* ✅ Placeholder style - fixed and unified */
+  input::placeholder,
+  textarea::placeholder {
+    color: #ccc;
+    font-size: 15px;
+    font-family: 'Segoe UI', sans-serif;
+    opacity: 1;
   }
   
   button, .btn {
