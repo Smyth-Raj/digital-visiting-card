@@ -52,12 +52,13 @@ app.post("/submit", upload.single("photo"), async (req, res) => {
 });
 
 app.get("/card/:id", (req, res) => {
-  const user = users[req.params.id];
-  if (!user) return res.status(404).send("Card not found");
-  user.views++;
-  res.render("card", { user, id: req.params.id });
-});
-
+    const user = users[req.params.id];
+    if (!user) return res.status(404).send("Card not found");
+    user.views++;
+  
+    const host = req.get('host');
+    res.render("card", { user, id: req.params.id, host });
+  });
 app.get("/vcf/:id", (req, res) => {
   const user = users[req.params.id];
   if (!user) return res.status(404).send("User not found");
